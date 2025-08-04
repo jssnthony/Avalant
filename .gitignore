@@ -1,0 +1,29 @@
+# Unreal Engine
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+.vscode/
+*.opensdf
+*.sdf
+*.suo
+*.user
+OBOBOB*.userprefs
+*.log
+*.vs/
+*.xcodeproj
+*.xcworkspace
+*.xcuserdata/
+
+# Compiled source
+*.dll
+*.exe
+*.app
+
+# Mac system files
+.DS_Store
+
+# Git LFS (para archivos grandes)
+*.uasset filter=lfs diff=lfs merge=lfs -text
+*.umap filter=lfs diff=lfs merge=lfs -text
+
