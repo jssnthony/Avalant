@@ -28,3 +28,10 @@ Saved/
 *.umap filter=lfs diff=lfs merge=lfs -text
 
 /BaseBackEnd/BaseBackEnd/obj
+/BaseBackEnd/Avalant.Application/bin
+/BaseBackEnd/Avalant.Application/obj
+/BaseBackEnd/BaseBackEnd/bin
+/BaseBackEnd/Models/bin
+/BaseBackEnd/Models/obj
+/BaseBackEnd/Repository/bin
+/BaseBackEnd/Repository/obj
