@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.8" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.8" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Avalant.Application\Avalant.Application.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>

@@ -1,22 +1,18 @@
-﻿using Avalant.Application.Managers;
-using Repository.InMemory;
-using Repository.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Repository;
 
-namespace BaseBackEnd
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            ICardRepository cardRepository = new InMemoryCardRepository();
-            CardManager cardManager = new CardManager(cardRepository);
+var configuration = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json")
+    .Build();
 
-            var character = cardManager.CreateCharacter("Elías", true);
+var services = new ServiceCollection();
 
-            Console.WriteLine($"Personaje creado: {character.Name}");
-        }
-    }
-}
+services.AddDbContext<GameDbContext>(options =>
+    options.UseMySql(
+        configuration.GetConnectionString("avalantdb"),
+        ServerVersion.AutoDetect(configuration.GetConnectionString("avalantdb"))
+    ));
+
+var provider = services.BuildServiceProvider();

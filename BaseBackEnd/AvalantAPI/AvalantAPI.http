@@ -1,0 +1,6 @@
+@AvalantAPI_HostAddress = http://localhost:5156
+
+GET {{AvalantAPI_HostAddress}}/avalant/
+Accept: application/json
+
+###

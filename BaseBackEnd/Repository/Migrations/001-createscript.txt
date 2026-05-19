@@ -1,0 +1,45 @@
+
+
+CREATE TABLE Cards (
+    Id CHAR(36) PRIMARY KEY,
+    Name VARCHAR(150) NOT NULL,
+    CardType VARCHAR(50) NOT NULL,
+    Description TEXT NULL,
+    CreatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    UpdatedAt DATETIME NULL
+);
+
+CREATE TABLE CardRelations (
+    Id CHAR(36) PRIMARY KEY,
+
+    SourceCardId CHAR(36) NOT NULL,
+    PredicateCardId CHAR(36) NOT NULL,
+    TargetCardId CHAR(36) NOT NULL,
+
+    CreatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    UpdatedAt DATETIME NULL,
+
+    CONSTRAINT FK_CardRelations_Source
+        FOREIGN KEY (SourceCardId) REFERENCES Cards(Id),
+
+    CONSTRAINT FK_CardRelations_Predicate
+        FOREIGN KEY (PredicateCardId) REFERENCES Cards(Id),
+
+    CONSTRAINT FK_CardRelations_Target
+        FOREIGN KEY (TargetCardId) REFERENCES Cards(Id)
+);
+
+CREATE INDEX IX_Cards_CardType 
+ON Cards(CardType);
+
+CREATE INDEX IX_CardRelations_Source 
+ON CardRelations(SourceCardId);
+
+CREATE INDEX IX_CardRelations_Predicate 
+ON CardRelations(PredicateCardId);
+
+CREATE INDEX IX_CardRelations_Target 
+ON CardRelations(TargetCardId);
+
+CREATE UNIQUE INDEX UX_CardRelations_Triple
+ON CardRelations(SourceCardId, PredicateCardId, TargetCardId);

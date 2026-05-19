@@ -26,14 +26,10 @@ namespace Avalant.Application.Managers
                 
             };
 
-            _cardRepository.Add(character);
+           
 
             return character;
         }
 
-        public List<CardBaseModel> GetAllCards()
-        {
-            return _cardRepository.GetAll();
-        }
     }
 }

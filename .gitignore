@@ -35,3 +35,9 @@ Saved/
 /BaseBackEnd/Models/obj
 /BaseBackEnd/Repository/bin
 /BaseBackEnd/Repository/obj
+/BaseBackEnd/Avalant.Data/obj
+/BaseBackEnd/Avalant.Domain/bin
+/BaseBackEnd/Avalant.Domain/obj
+/BaseBackEnd/AvalantAPI/bin
+/BaseBackEnd/AvalantAPI/obj
+BaseBackEnd/AvalantAPI/appsettings.Development.json

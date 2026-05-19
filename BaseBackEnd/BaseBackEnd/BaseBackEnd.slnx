@@ -1,6 +1,7 @@
 <Solution>
   <Project Path="../Avalant.Application/Avalant.Application.csproj" />
+  <Project Path="../Avalant.Domain/Avalant.Domain.csproj" />
+  <Project Path="../AvalantAPI/AvalantAPI.csproj" />
   <Project Path="../Models/Models.csproj" />
   <Project Path="../Repository/Repository.csproj" />
-  <Project Path="BaseBackEnd.csproj" />
 </Solution>
